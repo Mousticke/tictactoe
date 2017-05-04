@@ -1,0 +1,14 @@
+# Enable the rewrite plugin, so we can do our own routing
+RewriteEngine on
+
+# Redirect everything to the router
+RewriteRule .* router.php [L]
+
+# Make sure Magic Quotes don't ruin everything
+php_flag magic_quotes_gpc Off
+
+# By default, Apache only allows GET and POST.
+# So we need to explicitly tell it to allow other verbs.
+<Limit GET POST PUT DELETE>
+  Allow from all
+</Limit>

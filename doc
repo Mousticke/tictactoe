@@ -1,0 +1,27 @@
+
+# All games
+GET /games
+Return list of games in progress
+
+POST /games
+Create new game
+	name: Name of the game
+	size: Size of the game board (default 3)
+
+# Specific game
+GET /games/{id}
+Return state of game {id}
+
+PUT /games/{id}
+Change name of game {id}
+	name: New name
+
+POST /games/{id}
+Execute a turn
+	player: which player is playing, 1 or 2
+	row: 0-based index of the cell we're playing on
+	col: 0-based index of the cell we're playing on
+
+DELETE /games/{id}
+Delete game {id}
+
